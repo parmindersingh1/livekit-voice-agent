@@ -1,16 +1,40 @@
-import './App.css'
-import AudioButton from './components/AudioButton'
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { AuthProvider } from "./context/AuthContext";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Layout from "./components/Layout";
 
 function App() {
-
   return (
-    <>
-      <div className="min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">LiveKit Audio Streaming</h1>
-      <AudioButton />
-    </div>
-    </>
-  )
+    <Router>
+      <AuthProvider>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route element={<ProtectedRoute />}>
+            <Route
+              path="/dashboard"
+              element={
+                <Layout>
+                  <Dashboard />
+                </Layout>
+              }
+            />
+            <Route
+              path="/"
+              element={
+                <Layout>
+                  <Dashboard />
+                </Layout>
+              }
+            />
+          </Route>
+        </Routes>
+      </AuthProvider>
+    </Router>
+  );
 }
 
-export default App
+export default App;
