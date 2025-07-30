@@ -34,7 +34,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   // Hardcoded credentials with TypeScript interface
   const hardcodedUsers: User[] = [
     // { id: 1, username: 'admin', password: 'admin123', role: 'admin' },
-    { id: 2, username: 'user', password: 'user123', role: 'user' }
+    { id: 2, username: 'user', password: 'livekit@123', role: 'user' }
   ];
 
   const login = async (username: string, password: string) => {
