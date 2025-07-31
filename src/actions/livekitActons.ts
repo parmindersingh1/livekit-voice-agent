@@ -1,5 +1,5 @@
 
-const apiUrl =  import.meta.env.VITE_LIVEKIT_API_URL || 'https://livekit.voicebot.whilter.ai';
+const apiUrl =  import.meta.env.VITE_LIVEKIT_API_URL || 'https://lks.whilter.ai';
 
 interface TokenRequest {
   identity: string;

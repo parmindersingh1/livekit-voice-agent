@@ -44,7 +44,7 @@ interface UseLiveKitVoiceAssistantProps {
   onConnectionStateChange?: (state: ConnectionState) => void;
   onAgentStateChange?: (state: string) => void;
 }
-const LIVEKIT_SOCKET_URL = import.meta.env.VITE_LIVEKIT_SOCKET_URL || 'wss://websocket.voicebot.whilter.ai';
+const LIVEKIT_SOCKET_URL = import.meta.env.VITE_LIVEKIT_SOCKET_URL || 'wss://lks.whilter.ai';
 
 export const useLiveKitVoiceAssistant = ({
   onMessage,
